@@ -3,6 +3,8 @@ INSTRUCTIONS
 *********************************
 RAUSEENAH UPADHEY
 
+Please download the zip file from github and run it with a Java SE-1.8 JDK library atleast. 
+My set up that I coded and ran it on was on eclipse.
 
 Run the NumberSummarizerApp.java file to run with a default input
  or to have the option of entering your own input.
