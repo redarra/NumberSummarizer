@@ -3,7 +3,7 @@ INSTRUCTIONS
 *********************************
 RAUSEENAH UPADHEY
 
-Please download the zip file from github and run it with a Java SE-1.8 JDK library atleast. 
+Please download the zip file from github and run it with a Java SE-1.8 JDK library at least. It also runs in visual studio.
 My set up that I coded and ran it on was on eclipse.
 
 Run the NumberSummarizerApp.java file to run with a default input
