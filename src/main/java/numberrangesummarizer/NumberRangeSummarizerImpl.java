@@ -43,13 +43,11 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 		// Convert the string to an Array
 		String[] array = input.split(",");
 		int[] ints = new int[array.length];
-		//checks for empty items in the array and removes them
-		array=Arrays.stream(array)
-				.filter(x -> !x.isEmpty())
-				.toArray(String[]::new);
+		// checks for empty items in the array and removes them
+		array = Arrays.stream(array).filter(x -> !x.isEmpty()).toArray(String[]::new);
 		// Saves each item as an integer to the array
 		for (int i = 0; i < array.length; i++) {
-			//if(array[i]=="")
+			// if(array[i]=="")
 			ints[i] = Integer.parseInt(array[i]);
 		}
 
