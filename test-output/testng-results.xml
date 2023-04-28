@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-28T17:58:43 SAST" name="Suite" finished-at="2023-04-28T17:58:43 SAST" duration-ms="101">
+    <groups>
+    </groups>
+    <test started-at="2023-04-28T17:58:43 SAST" name="Input tests" finished-at="2023-04-28T17:58:43 SAST" duration-ms="101">
+      <class name="numberrangesummarizer.NumberSummarizerTest">
+        <test-method signature="consecutivePairTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="consecutivePairTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- consecutivePairTest -->
+        <test-method signature="duplicateTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="duplicateTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateTest -->
+        <test-method signature="listExtraCommasTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="listExtraCommasTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listExtraCommasTest -->
+        <test-method signature="listWithLettersTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="listWithLettersTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listWithLettersTest -->
+        <test-method signature="listsWithSpacesTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="listsWithSpacesTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listsWithSpacesTest -->
+        <test-method signature="shortStringTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="shortStringTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shortStringTest -->
+        <test-method signature="unorderedTest()[pri:0, instance:numberrangesummarizer.NumberSummarizerTest@64cd705f]" started-at="2023-04-28T17:58:43 SAST" name="unorderedTest" finished-at="2023-04-28T17:58:43 SAST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unorderedTest -->
+      </class> <!-- numberrangesummarizer.NumberSummarizerTest -->
+    </test> <!-- Input tests -->
+  </suite> <!-- Suite -->
+</testng-results>
