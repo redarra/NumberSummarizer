@@ -15,44 +15,35 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 	public static String run(String input) {
 		NumberRangeSummarizerImpl nrs = new NumberRangeSummarizerImpl();
 		try {
-
-			// this removes all the spaces in the string so that the code can run
+			// this removes all the spaces in the string
 			input = input.replaceAll(" ", "");
+			// This calls on the method that converts the string to a list of integers
+			Collection<Integer> collectionInput = (List<Integer>) nrs.collect(input);
 
-			// this checks if the input list size is less then 2 and if it is then it
-			// returns that number
-			if (!input.contains(",")) {
-				return (input.toString());
-			} else {
-				// This calls on the method that converts the string to a list of integers
-				Collection<Integer> collectionInput = (List<Integer>) nrs.collect(input);
+			// calls the method to summarize the list as well as returns the results
+			return (nrs.summarizeCollection(collectionInput));
 
-				// calls the method to summarize the list as well as returns the results
-				return (nrs.summarizeCollection(collectionInput));
-			}
-		} catch (Exception e) {
-			// This exception catches any cases where the input supplied is valid
-			// for example if it has letters or special characters in it or if there is more
-			// then one comma.
-			return ("Error with input!! The input has incorrect format.");
+		} catch (Exception e) {// This exception catches any cases where the input supplied is valid
+
+			// for example if the input has characters like letters or *&^%$#@!)( and more
+			return ("Error with input!! The input has incorrect format or may contain invalid characters.");
 		}
 	}
 
 	@Override
 	public Collection<Integer> collect(String input) {
-		// Convert the string to an Array
-		String[] array = input.split(",");
-		int[] ints = new int[array.length];
+
+		String[] array = input.split(",");// Convert the string to an Array
+
 		// checks for empty items in the array and removes them
 		array = Arrays.stream(array).filter(x -> !x.isEmpty()).toArray(String[]::new);
+		int[] ints = new int[array.length];
 		// Saves each item as an integer to the array
 		for (int i = 0; i < array.length; i++) {
-			// if(array[i]=="")
 			ints[i] = Integer.parseInt(array[i]);
 		}
 
-		// This Sorts the Array in Ascending order
-		Arrays.sort(ints);
+		Arrays.sort(ints); // This Sorts the Array in Ascending order
 		// converts array to List<Integer> type so that it can be returned
 		List<Integer> list = Arrays.stream(ints).boxed().toList();
 		return list;
@@ -62,48 +53,48 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 	public String summarizeCollection(Collection<Integer> input) {
 
 		StringBuilder sb = new StringBuilder();
+		ArrayList<Integer> list = new ArrayList<Integer>(input);
+		int length = list.size();
 
-		ArrayList<Integer> inputList = new ArrayList<Integer>(input);
-		int length = inputList.size();
-		// Start keeps track of starting points in ranges
-		// this allows for the correct ranges to be added.
-		int start = 0;
-		// Add the first item in the list to the string
-		sb.append(inputList.get(start));
-		for (int a = 1; a < length; a++) {
+		if (length < 2) {// this checks if the list size is less then 2
+			if (length == 0) {
+				return "The list of numbers entered is empty.";// If it is empty it returns text.
+			}
+			return list.get(0).toString();// if it is of size 1 it returns item 1
+		}
 
-			// if the number at position a is one more then the number the previous number
-			// or if the number at position a is equal to the previous number it goes into
-			// the if statement as it means that it is in a range.
-			if (inputList.get(a - 1) + 1 == inputList.get(a) || inputList.get(a - 1) == inputList.get(a)) {
+		int start = 0; // Start keeps track of starting points in ranges
+		sb.append(list.get(start));// Add the first item in the list to the string
 
-				// if it is the end and the last number is not equal to the first number in
+		for (int x = 1; x < length; x++) {
+
+			// If the number at position x is one more then the previous number
+			// or if the number at position x is equal to the previous number it goes into
+			// the if statement as it means that it is in x range.
+			if (list.get(x - 1) + 1 == list.get(x) || list.get(x - 1) == list.get(x)) {
+
+				// If it is the end and the last number is not equal to the first number in
 				// the range then it adds the last number as the end of that range.
-				if (length - 1 == a && !(inputList.get(start) == inputList.get(a))) {
-					sb.append("-" + (Integer) inputList.get(a));
+				if (length - 1 == x && !(list.get(start) == list.get(x))) {
+					sb.append("-" + (Integer) list.get(x));
 				}
 			}
 
-			else {
-				// when it enters the else statement it means number at position a is out of the
-				// range.
-				// if start is greater and the two numbers are different then it adds the end of
-				// the range to the string.
-				if (start < a - 1 && !(inputList.get(start) == inputList.get(a - 1))) {
-					sb.append("-" + (Integer) inputList.get(a - 1) + ", " + inputList.get(a));
+			else { // if it enters the else the current number is out of the range.
+					// If start is greater and the two numbers are different then it adds the end of
+					// the range to the string.
+				if (start < x - 1 && !(list.get(start) == list.get(x - 1))) {
+					sb.append("-" + (Integer) list.get(x - 1) + ", " + list.get(x));
 				}
 				// if the previous was not a range it adds a comma and adds the number at the
 				// current position to the string.
 				else {
-					sb.append(", " + inputList.get(a));
+					sb.append(", " + list.get(x));
 				}
-				// sets start to a so the range is being tracked from a new starting point.
-				start = a;
+				start = x;// sets start to a so the range is being tracked from a new starting point.
 			}
-
 		}
-
 		return sb.toString();
-	}
 
+	}
 }
