@@ -13,7 +13,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 	/**
 	 * Run this for various inputs to be run to check if the code runs correctly
 	 */
-	@Test
+	@Test(priority = 1)
 	public void emptyListTest() {
 		System.out.println("Test 1: Empty List Test");
 		System.out.println("This tests with an empty list as input.");
@@ -23,7 +23,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void shortStringTest() {
 		System.out.println("Test 2: Short String Test");
 		System.out.println("This tests if the code can handle lists of size 1.");
@@ -32,7 +32,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out.equals("1"));
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void emptyListWithCommasTest() {
 		System.out.println("Test 3: Empty List With Commas Test");
 		System.out.println("This tests a list containing spaces & commas only.");
@@ -41,7 +41,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out.equals("The list of numbers entered is empty."));
 	}
 
-	@Test
+	@Test(priority = 4)
 	public void listWith1ItemCommasTest() {
 		System.out.println("Test 4: List With 1 Item & Commas Test");
 		System.out.println("This tests if the code can handle lists of size 1 with commas & spaces.");
@@ -50,7 +50,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out.equals("1"));
 	}
 
-	@Test
+	@Test(priority = 5)
 	public void consecutivePairTest() {
 		System.out.println("Test 5: Consecutive Pair Test");
 		System.out.println("This tests if the code ignores duplicates in a list of size 2.");
@@ -64,7 +64,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out2.equals("3-4"));
 	}
 
-	@Test
+	@Test(priority = 6)
 	public void duplicateTest() {
 		System.out.println("Test 6: Duplicate Test");
 		System.out.println("This tests if the code ignores duplicates in the middle of the list.");
@@ -79,7 +79,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 
 	}
 
-	@Test
+	@Test(priority = 7)
 	public void unorderedTest() {
 		System.out.println("Test 7: Unordered Test");
 		String out = run("3,3,1,2,10,11,12,25,24,33,26");
@@ -88,7 +88,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out.equals("1-3, 10-12, 24-26, 33"));
 	}
 
-	@Test
+	@Test(priority = 8)
 	public void listsWithSpacesTest() {
 		System.out.println("Test 8: Lists With Spaces Test");
 		String out = run("3, 3,   1,2   ,10,11,12,25,24,33,26");
@@ -97,7 +97,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 		Assert.assertTrue(out.equals("1-3, 10-12, 24-26, 33"));
 	}
 
-	@Test
+	@Test(priority = 9)
 	public void listWithLettersTest() {
 		System.out.println("Test 9: List With Letters Test");
 		String out = run("3, 3,  DFG,DD 1,2   ,10,11,12,25,24,33,26");
@@ -107,7 +107,7 @@ public class NumberSummarizerTest extends NumberRangeSummarizerImpl {
 				out.equals("Error with input!! The input has incorrect format or may contain invalid characters."));
 	}
 
-	@Test
+	@Test(priority = 10)
 	public void listExtraCommasTest() {
 		System.out.println("Test 10: List Extra Commas Test");
 		String out = run("1,,,3,4,2,5,8,10");
