@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
@@ -45,7 +46,7 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
 		Arrays.sort(ints); // This Sorts the Array in Ascending order
 		// converts array to List<Integer> type so that it can be returned
-		List<Integer> list = Arrays.stream(ints).boxed().toList();
+		List<Integer> list = Arrays.stream(ints).boxed().collect(Collectors.toList());
 		return list;
 	}
 
